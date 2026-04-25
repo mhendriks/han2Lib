@@ -14,6 +14,9 @@ void loop() {
   if (!reader.available()) return;
 
   if (reader.parse(&data, &err)) {
+    han::debug::printHanData(Serial, data, F("Parsed HanData"));
+    Serial.println();
+
     Serial.print("List type: ");
     Serial.println((int)data.list_type);
     if (data.timestamp.present()) {

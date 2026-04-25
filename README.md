@@ -66,11 +66,25 @@ void loop() {
 - total import/export energy
 - total reactive import/export energy
 
+For debugging, you can log the internal parsed values directly:
+
+```cpp
+if (reader.parse(&data, &err)) {
+  han::debug::printHanData(Serial, data, F("Parsed HanData"));
+}
+```
+
 `HanReader::state()` exposes a retained `HanState` with:
 
 - `last_list1`
 - `last_list2`
 - `effective`
+
+The retained state can be logged in the same way:
+
+```cpp
+han::debug::printHanState(Serial, reader.state());
+```
 
 That retained state is important for `HAN-NVE`, where list 1 contains live data
 and list 2 refreshes the cumulative totals.

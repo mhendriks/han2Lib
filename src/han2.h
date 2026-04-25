@@ -6,6 +6,7 @@
 #include "han2/reader2.h"
 #include "han2/test2.h"
 #include "han2/compat_dsmr2.h"
+#include "han2/util.h"
 
 using namespace han;
 
