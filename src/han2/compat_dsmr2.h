@@ -29,8 +29,6 @@ inline void mapToDsmr(TDsmrData& out, const HanState& state, const String& fallb
   out.identification = effective.identification.present() ? effective.identification.val() : fallbackId;
   out.identification_present = out.identification.length() > 0;
 
-  out.p1_version = "50";
-  out.p1_version_present = true;
 
   if (effective.equipment_id.present()) {
     out.equipment_id = effective.equipment_id.val();
